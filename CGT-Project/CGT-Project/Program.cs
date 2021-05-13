@@ -1,4 +1,5 @@
-﻿using CGT_Project.Data_Structures;
+﻿using CGT_Project.Algorithms;
+using CGT_Project.Data_Structures;
 using CGT_Project.Graph_Handlers;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,12 @@ namespace CGT_Project
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            Algorithm Alg1_LF = new LargestFirstAlgorithm();
 
             var generatedGraphs = GenerateGraphs(4, 4, 8, 1);
             foreach (Graph graph in generatedGraphs)
             {
+                Alg1_LF.Coloring(graph);
                 graph.PrintGraph();
             }
 
