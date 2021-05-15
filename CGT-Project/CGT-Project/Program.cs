@@ -12,13 +12,17 @@ namespace CGT_Project
         {
             Console.WriteLine("Hello World!");
 
-            var generatedGraphs = GenerateGraphs(8, 8, 40, 1);
+            var generatedGraphs = GenerateGraphs(8, 300, 300, 1);
             foreach (Graph graph in generatedGraphs)
             {
-                LargestFirstAlgorithm.Coloring(graph);
                 GreedyIndependentSetAlgorithm.ColorGraph(graph);
-            }
+                Console.WriteLine($"GIS Result: {graph.ChromaticSum}\n");
 
+                graph.ClearColors();
+
+                LargestFirstAlgorithm.Coloring(graph);
+                Console.WriteLine($"LF Result: {graph.ChromaticSum}\n");
+            }
             Console.WriteLine("\nBy By World!");
         }
 

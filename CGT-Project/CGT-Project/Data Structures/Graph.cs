@@ -23,6 +23,11 @@ namespace CGT_Project.Data_Structures
             }
         }
 
+        public void ClearColors()
+        {
+            Vertices.ForEach(vertex => vertex.Color = 0);
+        }
+
         public void AddEdge(int idA, int idB)
         {
             foreach (Vertex vertex in Vertices)
