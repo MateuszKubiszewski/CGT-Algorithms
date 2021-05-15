@@ -1,40 +1,40 @@
 ﻿using CGT_Project.Data_Structures;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CGT_Project.Algorithms
 {
-    class LargestFirstAlgorithm : Algorithm
+    public static class LargestFirstAlgorithm
     {
-        public override void Coloring(Graph G)
+        public static void Coloring(Graph G)
         {
-            Vertex StartingV = getLargestVertex(G);
-            colorSingleVertex(StartingV, G);
-            if (G.allVerticesHaveColor())
+            Vertex StartingV = GetLargestVertex(G);
+            ColorSingleVertex(StartingV, G);
+            if (G.AllVerticesHaveColor() && G.IsColoringProper())
                 G.AcceptColoring();
             else
                 Console.WriteLine("ERROR LF Algorithm created not valid coloring");
         }
         
-        private void colorSingleVertex(Vertex v, Graph G)
+        private static void ColorSingleVertex(Vertex v, Graph G)
         {
             if (v.Color != 0) return;
-            int newColor = getSmallestAvaibleColorInNeighbours(v, G);
+            int newColor = GetSmallestAvaibleColorInNeighbours(v, G);
             G.SetVertexColor(v.Id, newColor);
             foreach(int VertexId in v.Connections)
             {
-                colorSingleVertex(G.GetVertexById(VertexId), G);
+                ColorSingleVertex(G.GetVertexById(VertexId), G);
             }
         }
-        private int getSmallestAvaibleColorInNeighbours(Vertex v, Graph G)
+
+        private static int GetSmallestAvaibleColorInNeighbours(Vertex v, Graph G)
         {
             List<int> colors = new List<int>();
             foreach (int VertexId in v.Connections)
             {
                 colors.Add(G.GetVertexColor(VertexId));
             }
-            for(int i=1;i<G.Size;i++)
+            for(int i = 1; i < G.Vertices.Count; i++)
             {
                 bool cFound = true;
                 foreach (int c in colors)
@@ -44,9 +44,10 @@ namespace CGT_Project.Algorithms
                 if (cFound) return i;
             }
             Console.WriteLine("ERROR Number of Colors in Graph exceeded safe boundry");
-            return getLargestColorInNeighbours(v,G);
+            return GetLargestColorInNeighbours(v, G);
         }
-        private int getLargestColorInNeighbours(Vertex v, Graph G)
+
+        private static int GetLargestColorInNeighbours(Vertex v, Graph G)
         {
             int maxColor = 0;
             foreach(int VertexId in v.Connections)
@@ -55,7 +56,8 @@ namespace CGT_Project.Algorithms
             }
             return maxColor;
         }
-        private Vertex getLargestVertex(Graph G)
+
+        private static Vertex GetLargestVertex(Graph G)
         {
             Vertex maxV = G.Vertices[0];
             foreach(Vertex v in G.Vertices)

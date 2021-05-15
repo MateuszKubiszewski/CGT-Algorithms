@@ -11,13 +11,12 @@ namespace CGT_Project
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            Algorithm Alg1_LF = new LargestFirstAlgorithm();
 
-            var generatedGraphs = GenerateGraphs(4, 4, 8, 1);
+            var generatedGraphs = GenerateGraphs(8, 8, 40, 1);
             foreach (Graph graph in generatedGraphs)
             {
-                Alg1_LF.Coloring(graph);
-                graph.PrintGraph();
+                LargestFirstAlgorithm.Coloring(graph);
+                GreedyIndependentSetAlgorithm.ColorGraph(graph);
             }
 
             Console.WriteLine("\nBy By World!");
