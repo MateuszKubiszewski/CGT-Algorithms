@@ -109,21 +109,21 @@ namespace CGT_ProjectWPF
         private void setResultData(AnalyzeData data)
         {
             //Assining all caluculated values to the correponding UI element
-            LF_CromaMin.Text =      "Minimal Chroamtic number: "        + data.LF_MinChromaticSum.ToString();
-            LF_CromaMax.Text =      "Maximal Chroamtic number: "     + data.LF_MaxChromaticSum.ToString();
-            LF_CromaAvg.Text =      "Average Chroamtic number: "     + data.getLF_ChromAvg().ToString();
-            LF_CromaTotal.Text =    "Sum of all Chroamtic numbers: " + data.LF_TotalChromaticSum.ToString();
+            LF_CromaMin.Text =      "Minimal Chromatic number: "        + data.LF_MinChromaticSum.ToString();
+            LF_CromaMax.Text =      "Maximal Chromatic number: "     + data.LF_MaxChromaticSum.ToString();
+            LF_CromaAvg.Text =      "Average Chromatic number: "     + data.getLF_ChromAvg().ToString();
+            LF_CromaTotal.Text =    "Sum of all Chromatic numbers: " + data.LF_TotalChromaticSum.ToString();
             LF_timeMin.Text =       "Minimal time execution: "       + data.LF_MinTime.ToString() + "ms";
-            LF_timeMax.Text =       "Maximal of time execution: "    + data.LF_MaxTime + "ms";
-            LF_timeAvg.Text =       "Average of time execution: "    + data.getLF_TimeAvg().ToString() + "ms";
+            LF_timeMax.Text =       "Maximal time execution: "    + data.LF_MaxTime + "ms";
+            LF_timeAvg.Text =       "Average time execution: "    + data.getLF_TimeAvg().ToString() + "ms";
 
-            ISA_CromaMin.Text = "Minimal Chroamtic number: " + data.ISA_MinChromaticSum.ToString();
-            ISA_CromaMax.Text = "Maximal Chroamtic number: " + data.ISA_MaxChromaticSum.ToString();
-            ISA_CromaAvg.Text = "Average Chroamtic number: " + data.getISA_ChromAvg().ToString();
-            ISA_CromaTotal.Text = "Sum of all Chroamtic numbers: " + data.ISA_TotalChromaticSum.ToString();
+            ISA_CromaMin.Text = "Minimal Chromatic number: " + data.ISA_MinChromaticSum.ToString();
+            ISA_CromaMax.Text = "Maximal Chromatic number: " + data.ISA_MaxChromaticSum.ToString();
+            ISA_CromaAvg.Text = "Average Chromatic number: " + data.getISA_ChromAvg().ToString();
+            ISA_CromaTotal.Text = "Sum of all Chromatic numbers: " + data.ISA_TotalChromaticSum.ToString();
             ISA_timeMin.Text = "Minimal time execution: " + data.ISA_MinTime.ToString()+"ms";
-            ISA_timeMax.Text = "Maximal of time execution: " + data.ISA_MaxTime + "ms";
-            ISA_timeAvg.Text = "Average of time execution: " + data.getISA_TimeAvg().ToString() + "ms";
+            ISA_timeMax.Text = "Maximal time execution: " + data.ISA_MaxTime + "ms";
+            ISA_timeAvg.Text = "Average time execution: " + data.getISA_TimeAvg().ToString() + "ms";
 
             //Checking the values and coloring witch elelment is better
             Brush NoneColor = Brushes.Gray;

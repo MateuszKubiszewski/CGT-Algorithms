@@ -63,22 +63,22 @@
             </Grid.RowDefinitions>
 
             <TextBlock Name="LF_title" Grid.Row="1" Grid.Column="0" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center">Largest First Algorithm</TextBlock>
-            <TextBlock Name="LF_CromaMin" Grid.Row="2" Grid.Column="0" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Minimal Chroamtic number: ---</TextBlock>
-            <TextBlock Name="LF_CromaMax" Grid.Row="3" Grid.Column="0" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Maximal Chroamtic number: ---</TextBlock>
-            <TextBlock Name="LF_CromaAvg" Grid.Row="4" Grid.Column="0" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Average Chroamtic number: ---</TextBlock>
-            <TextBlock Name="LF_CromaTotal" Grid.Row="5" Grid.Column="0" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Sum of all Chroamtic numbers: ---</TextBlock>
+            <TextBlock Name="LF_CromaMin" Grid.Row="2" Grid.Column="0" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Minimal Chromatic number: ---</TextBlock>
+            <TextBlock Name="LF_CromaMax" Grid.Row="3" Grid.Column="0" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Maximal Chromatic number: ---</TextBlock>
+            <TextBlock Name="LF_CromaAvg" Grid.Row="4" Grid.Column="0" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Average Chromatic number: ---</TextBlock>
+            <TextBlock Name="LF_CromaTotal" Grid.Row="5" Grid.Column="0" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Sum of all Chromatic numbers: ---</TextBlock>
             <TextBlock Name="LF_timeMin" Grid.Row="6" Grid.Column="0" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Minimal time execution: ---</TextBlock>
-            <TextBlock Name="LF_timeMax" Grid.Row="7" Grid.Column="0" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Maximal of time execution: ---</TextBlock>
-            <TextBlock Name="LF_timeAvg" Grid.Row="8" Grid.Column="0" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Average of time execution: ---</TextBlock>
+            <TextBlock Name="LF_timeMax" Grid.Row="7" Grid.Column="0" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Maximal time execution: ---</TextBlock>
+            <TextBlock Name="LF_timeAvg" Grid.Row="8" Grid.Column="0" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Average time execution: ---</TextBlock>
             
             <TextBlock Name="ISA_title" Grid.Row="1" Grid.Column="1" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center">Independent Set Algorithm</TextBlock>
-            <TextBlock Name="ISA_CromaMin" Grid.Row="2" Grid.Column="1" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Minimal Chroamtic number: ---</TextBlock>
-            <TextBlock Name="ISA_CromaMax" Grid.Row="3" Grid.Column="1" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Maximal Chroamtic number: ---</TextBlock>
-            <TextBlock Name="ISA_CromaAvg" Grid.Row="4" Grid.Column="1" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Average Chroamtic number: ---</TextBlock>
-            <TextBlock Name="ISA_CromaTotal" Grid.Row="5" Grid.Column="1" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Sum of all Chroamtic numbers: ---</TextBlock>
+            <TextBlock Name="ISA_CromaMin" Grid.Row="2" Grid.Column="1" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Minimal Chromatic number: ---</TextBlock>
+            <TextBlock Name="ISA_CromaMax" Grid.Row="3" Grid.Column="1" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Maximal Chromatic number: ---</TextBlock>
+            <TextBlock Name="ISA_CromaAvg" Grid.Row="4" Grid.Column="1" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Average Chromatic number: ---</TextBlock>
+            <TextBlock Name="ISA_CromaTotal" Grid.Row="5" Grid.Column="1" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Sum of all Chromatic numbers: ---</TextBlock>
             <TextBlock Name="ISA_timeMin" Grid.Row="6" Grid.Column="1" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Minimal time execution: ---</TextBlock>
-            <TextBlock Name="ISA_timeMax" Grid.Row="7" Grid.Column="1" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Maximal of time execution: ---</TextBlock>
-            <TextBlock Name="ISA_timeAvg" Grid.Row="8" Grid.Column="1" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Average of time execution: ---</TextBlock>
+            <TextBlock Name="ISA_timeMax" Grid.Row="7" Grid.Column="1" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Maximal time execution: ---</TextBlock>
+            <TextBlock Name="ISA_timeAvg" Grid.Row="8" Grid.Column="1" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Average time execution: ---</TextBlock>
         </Grid>
     </Grid>
 </Window>
