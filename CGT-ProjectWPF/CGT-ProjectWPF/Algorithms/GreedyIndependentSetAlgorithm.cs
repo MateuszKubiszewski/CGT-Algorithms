@@ -41,7 +41,7 @@ namespace CGT_Project.Algorithms
             }
 
             if (G.AllVerticesHaveColor() && G.IsColoringProper())
-                Console.WriteLine("success\n");
+                Console.WriteLine("Success\n");
 
             //return G.AllVerticesHaveColor() && G.IsColoringProper();
         }

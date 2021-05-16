@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -26,6 +27,9 @@ namespace CGT_ProjectWPF
     public partial class MainWindow : Window
     {
         private BackgroundWorker bgWorker = new BackgroundWorker();
+        private int minSize;
+        private int maxSize;
+        private int graphsCount;
 
         public MainWindow()
         {
@@ -41,14 +45,47 @@ namespace CGT_ProjectWPF
             bgWorker.ProgressChanged += new ProgressChangedEventHandler(ProgressChanged);
             bgWorker.DoWork += new DoWorkEventHandler(StartAlgorithm);
         }
-        private void MinGS_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
+        private void MinChanged(object sender, TextChangedEventArgs e)
+        {
+            if (Int32.TryParse((sender as TextBox).Text, out minSize))
+            {
+                (sender as TextBox).Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+                e.Handled = true;
+            }
+            else
+            {
+                (sender as TextBox).Background = new SolidColorBrush(Color.FromRgb(255, 0, 0));
+                e.Handled = false;
+            }
         }
 
-        private void MaxGS_TextChanged(object sender, TextChangedEventArgs e)
+        private void MaxChanged(object sender, TextChangedEventArgs e)
         {
+            if (Int32.TryParse((sender as TextBox).Text, out maxSize))
+            {
+                (sender as TextBox).Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+                e.Handled = true;
+            }
+            else
+            {
+                (sender as TextBox).Background = new SolidColorBrush(Color.FromRgb(255, 0, 0));
+                e.Handled = false;
+            }
+        }
 
+        private void NumChanged(object sender, TextChangedEventArgs e)
+        {
+            if (Int32.TryParse((sender as TextBox).Text, out graphsCount))
+            {
+                (sender as TextBox).Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+                e.Handled = true;
+            }
+            else
+            {
+                (sender as TextBox).Background = new SolidColorBrush(Color.FromRgb(255, 0, 0));
+                e.Handled = false;
+            }
         }
 
         private void StartAlg_Click(object sender, RoutedEventArgs e)
@@ -62,7 +99,7 @@ namespace CGT_ProjectWPF
         public void StartAlgorithm(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker workerSender = sender as BackgroundWorker;
-            var generatedGraphs = Graph.GenerateGraphs(100, 100, 200, 1);
+            var generatedGraphs = Graph.GenerateGraphs(graphsCount, minSize, maxSize, 1);
             AnalyzeData Data = new AnalyzeData();
             double i = 0;
             Stopwatch stopwatch = new Stopwatch();
@@ -98,12 +135,7 @@ namespace CGT_ProjectWPF
         public void AlgorithmFinished(object sender, RunWorkerCompletedEventArgs e)
         {
             LoadingInfo.Text = "Finished";
-
-        }
-
-        private void NumG_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            StartAlg.IsEnabled = true;
         }
 
         private void setResultData(AnalyzeData data)

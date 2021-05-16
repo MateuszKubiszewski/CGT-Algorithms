@@ -29,11 +29,11 @@
             <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="22">Graph Algorithm Analizer</TextBlock>
 
             <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">Minimal graph size:</TextBlock>
-            <TextBox  Name="MinGS" Grid.Row="1" Grid.Column="1"  VerticalAlignment="Center" TextChanged="MinGS_TextChanged"/>
+            <TextBox  Name="MinGS" Grid.Row="1" Grid.Column="1"  VerticalAlignment="Center" TextChanged="MinChanged"/>
             <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">Maximal graph size:</TextBlock>
-            <TextBox  Name="MaxGS" Grid.Row="2" Grid.Column="1"  VerticalAlignment="Center" TextChanged="MaxGS_TextChanged"/>
+            <TextBox  Name="MaxGS" Grid.Row="2" Grid.Column="1"  VerticalAlignment="Center" TextChanged="MaxChanged"/>
             <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">Number of Graphs:</TextBlock>
-            <TextBox  Name="NumG" Grid.Row="3" Grid.Column="1"  VerticalAlignment="Center" TextChanged="NumG_TextChanged"/>
+            <TextBox  Name="NumG" Grid.Row="3" Grid.Column="1"  VerticalAlignment="Center" TextChanged="NumChanged"/>
             <!-- Place for other options ... -->
 
             <Grid Name="LoadingGrid" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Visibility="Hidden">
