@@ -1,0 +1,84 @@
+﻿<Window x:Class="CGT_ProjectWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CGT_ProjectWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="22">Graph Algorithm Analizer</TextBlock>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">Minimal graph size:</TextBlock>
+            <TextBox  Name="MinGS" Grid.Row="1" Grid.Column="1"  VerticalAlignment="Center" TextChanged="MinGS_TextChanged"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">Maximal graph size:</TextBlock>
+            <TextBox  Name="MaxGS" Grid.Row="2" Grid.Column="1"  VerticalAlignment="Center" TextChanged="MaxGS_TextChanged"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">Number of Graphs:</TextBlock>
+            <TextBox  Name="NumG" Grid.Row="3" Grid.Column="1"  VerticalAlignment="Center" TextChanged="NumG_TextChanged"/>
+            <!-- Place for other options ... -->
+
+            <Grid Name="LoadingGrid" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Visibility="Hidden">
+                <ProgressBar Name="LoadingBar" Margin="50,5" Minimum="0" Maximum="100" Value="{Binding workerState}"></ProgressBar>
+                <TextBlock   Name="LoadingInfo" HorizontalAlignment="Center" VerticalAlignment="Center">Loading ...</TextBlock>
+            </Grid>
+            <Button Name="StartAlg" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Margin="50,5" Click="StartAlg_Click">Start the Algorithm</Button>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Name="LF_title" Grid.Row="1" Grid.Column="0" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center">Largest First Algorithm</TextBlock>
+            <TextBlock Name="LF_CromaMin" Grid.Row="2" Grid.Column="0" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Minimal Chroamtic number: ---</TextBlock>
+            <TextBlock Name="LF_CromaMax" Grid.Row="3" Grid.Column="0" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Maximal Chroamtic number: ---</TextBlock>
+            <TextBlock Name="LF_CromaAvg" Grid.Row="4" Grid.Column="0" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Average Chroamtic number: ---</TextBlock>
+            <TextBlock Name="LF_CromaTotal" Grid.Row="5" Grid.Column="0" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Sum of all Chroamtic numbers: ---</TextBlock>
+            <TextBlock Name="LF_timeMin" Grid.Row="6" Grid.Column="0" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Minimal time execution: ---</TextBlock>
+            <TextBlock Name="LF_timeMax" Grid.Row="7" Grid.Column="0" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Maximal of time execution: ---</TextBlock>
+            <TextBlock Name="LF_timeAvg" Grid.Row="8" Grid.Column="0" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Average of time execution: ---</TextBlock>
+            
+            <TextBlock Name="ISA_title" Grid.Row="1" Grid.Column="1" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center">Independent Set Algorithm</TextBlock>
+            <TextBlock Name="ISA_CromaMin" Grid.Row="2" Grid.Column="1" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Minimal Chroamtic number: ---</TextBlock>
+            <TextBlock Name="ISA_CromaMax" Grid.Row="3" Grid.Column="1" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Maximal Chroamtic number: ---</TextBlock>
+            <TextBlock Name="ISA_CromaAvg" Grid.Row="4" Grid.Column="1" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Average Chroamtic number: ---</TextBlock>
+            <TextBlock Name="ISA_CromaTotal" Grid.Row="5" Grid.Column="1" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Sum of all Chroamtic numbers: ---</TextBlock>
+            <TextBlock Name="ISA_timeMin" Grid.Row="6" Grid.Column="1" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Minimal time execution: ---</TextBlock>
+            <TextBlock Name="ISA_timeMax" Grid.Row="7" Grid.Column="1" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Maximal of time execution: ---</TextBlock>
+            <TextBlock Name="ISA_timeAvg" Grid.Row="8" Grid.Column="1" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">Average of time execution: ---</TextBlock>
+        </Grid>
+    </Grid>
+</Window>
